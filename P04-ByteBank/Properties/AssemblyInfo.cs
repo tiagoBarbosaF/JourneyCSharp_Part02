@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("P01_ByteBank")]
+[assembly: AssemblyTitle("P04_ByteBank")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("P01_ByteBank")]
+[assembly: AssemblyProduct("P04_ByteBank")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0704D543-072C-4DCD-836B-61664FF83DA9")]
+[assembly: Guid("AAB48AA1-633B-4F1E-B2EA-144F2A43E081")]
 
 // Version information for an assembly consists of the following four values:
 //
