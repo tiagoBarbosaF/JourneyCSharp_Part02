@@ -6,27 +6,73 @@ namespace P04_ByteBank
   {
     public static void Main(string[] args)
     {
-      ContaCorrente contaCorrente = new ContaCorrente();
+      ContaCorrente contaCorrenteTiago = new ContaCorrente();
 
-      contaCorrente.Titular = "Tiago";
+      contaCorrenteTiago.Titular = "Tiago";
 
-      Console.WriteLine($"Titular: {contaCorrente.Titular}");
-      Console.WriteLine($"Saldo atual: {contaCorrente.Saldo}");
-      bool resultSaque = contaCorrente.Sacar(500);
+      Console.WriteLine($"Titular: {contaCorrenteTiago.Titular}");
+      Console.WriteLine($"Saldo atual: {contaCorrenteTiago.Saldo}");
+      bool resultSaque = contaCorrenteTiago.Sacar(500);
 
-      if (resultSaque == true)
+      if (resultSaque)
       {
         Console.WriteLine("Saque realizado com sucesso:");
-        Console.WriteLine($"Saldo após o saque: {contaCorrente.Saldo}");
+        Console.WriteLine($"Saldo após o saque: {contaCorrenteTiago.Saldo}");
       }
       else
       {
         Console.WriteLine("Você não possui saldo para realizar este saque.");
       }
 
-      Console.WriteLine($"\nSeu saldo atual é {contaCorrente.Saldo}.");
-      contaCorrente.Depositar(500);
-      Console.WriteLine($"\nVocê realizou um deposito seu saldo é de R$ {contaCorrente.Saldo}");
+      ContaCorrente contaCorrenteGabriele = new ContaCorrente();
+
+      contaCorrenteGabriele.Titular = "Gabriele";
+      Console.WriteLine($"\nSaldo conta Tiago: R$ {contaCorrenteTiago.Saldo}.");
+      Console.WriteLine($"Saldo conta Gabriele: R$ {contaCorrenteGabriele.Saldo}.");
+      contaCorrenteTiago.Depositar(500);
+      Console.WriteLine($"\nVocê realizou um deposito seu saldo é de R$ {contaCorrenteTiago.Saldo}");
+
+      Console.WriteLine($"\nSaldo conta Tiago: R$ {contaCorrenteTiago.Saldo}.");
+      Console.WriteLine($"Saldo conta Gabriele: R$ {contaCorrenteGabriele.Saldo}.");
+
+      bool resultTransferTiago = contaCorrenteTiago.Transferir(200, contaCorrenteGabriele);
+
+      if (resultTransferTiago)
+      {
+        Console.WriteLine($"\nVocê realizou uma transferência com sucesso!");
+        Console.WriteLine($"Saldo conta Tiago: R$ {contaCorrenteTiago.Saldo}.");
+        Console.WriteLine($"Saldo conta Gabriele: R$ {contaCorrenteGabriele.Saldo}.");
+      }
+      else
+      {
+        Console.WriteLine($"Saldo insuficiente para transferência.");
+      }
+
+      bool resultTransferGabriele = contaCorrenteGabriele.Transferir(100, contaCorrenteTiago);
+      
+      if (resultTransferGabriele)
+      {
+        Console.WriteLine($"\nVocê realizou uma transferência com sucesso!");
+        Console.WriteLine($"Saldo conta Tiago: R$ {contaCorrenteTiago.Saldo}.");
+        Console.WriteLine($"Saldo conta Gabriele: R$ {contaCorrenteGabriele.Saldo}.");
+      }
+      else
+      {
+        Console.WriteLine($"Saldo insuficiente para transferência.");
+      }
+
+      bool resulTransferTiago = contaCorrenteTiago.Transferir(2000, contaCorrenteGabriele);
+      
+      if (resulTransferTiago)
+      {
+        Console.WriteLine($"\nVocê realizou uma transferência com sucesso!");
+        Console.WriteLine($"Saldo conta Tiago: R$ {contaCorrenteTiago.Saldo}.");
+        Console.WriteLine($"Saldo conta Gabriele: R$ {contaCorrenteGabriele.Saldo}.");
+      }
+      else
+      {
+        Console.WriteLine($"Saldo insuficiente para transferência.");
+      }
     }
   }
 }

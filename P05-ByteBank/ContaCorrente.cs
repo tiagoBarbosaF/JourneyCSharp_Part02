@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace P04_ByteBank
+﻿namespace P05_ByteBank
 {
   public class ContaCorrente
   {
-    public string Titular { get; set; }
+    public Cliente Titular { get; set; }
     public int Agencia { get; set; }
     public int Numero { get; set; }
     public decimal Saldo { get; set; } = 100;
